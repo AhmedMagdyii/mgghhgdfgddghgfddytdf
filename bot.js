@@ -9,11 +9,10 @@ const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const UserBlocked = new Set();
-const prefix = '*'
+const prefix = '&'
 
  client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame("Type : *mhelp || *minv", "https://www.twitch.tv/idk");
 });
  
  
@@ -30,8 +29,8 @@ client.user.setStatus("online")
 });
 //كود تغير البلاينج او التويتش
 
-const adminprefix = "*";//تذكير نغير البرفكس
-const devs = ['427054141492297728','502761044796768256'];//zمهم نحط الايدي
+const adminprefix = "&";//تذكير نغير البرفكس
+const devs = ['389056776601075723','389056776601075723'];//zمهم نحط الايدي
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' '); //حقوق GMZN Host
     if (!devs.includes(message.author.id)) return;
@@ -52,17 +51,17 @@ if (message.content.startsWith(adminprefix + 'tw')) {
 
 client.on("message", message => {
   var prefix = "*";
-if (message.content === "*mhelp") {
+if (message.content === "&help") {
    message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
 const embed = new Discord.RichEmbed()
     .setDescription(`
    [❖═══════ اوامر اغاني═══════❖]
-** *play ~ لتشغيل الاغنيه**
-** *stop ~ لأيقاف الاغنيه**
-** *skip ~ لتخطي الاغنيه**
-** *vol <namber> ~ ل تعلية واخفاض صوت الاغنيه**
-** *pause ~ لأيقاف الاغنيه موقتا**
-** *resume ~ لأستمرار الاغنيه**
+** &play ~ لتشغيل الاغنيه**
+** &stop ~ لأيقاف الاغنيه**
+** &skip ~ لتخطي الاغنيه**
+** &vol <namber> ~ ل تعلية واخفاض صوت الاغنيه**
+** &pause ~ لأيقاف الاغنيه موقتا**
+** &resume ~ لأستمرار الاغنيه**
 `)
  message.author.sendEmbed(embed)
  
@@ -409,22 +408,5 @@ function play(guild, song) {
 
 //كود الانفيت
 
-client.on('message' , message => {
- 
-    if (message.content === "*minv") {
-        message.reply(`تم ارساله الرابط في الخاص`)
-        if(!message.channel.guild) return message.reply('**الآمر فقط في السيرفرات**');
-     const embed = new Discord.RichEmbed()
- .setColor("RANDOM")
- .setThumbnail(client.user.avatarURL)    
- .setDescription("دعوة اضافة البوت" + `
- **
-رابط البوت |
-http://cutt.us/GMZNMusic
- **
-`);
-  message.author.sendEmbed(embed);
-   }
-});
 
 client.login(process.env.BOT_TOKEN);
