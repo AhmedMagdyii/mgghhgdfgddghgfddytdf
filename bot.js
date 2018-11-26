@@ -30,7 +30,7 @@ client.user.setStatus("online")
 //كود تغير البلاينج او التويتش
 
 const adminprefix = "&";//تذكير نغير البرفكس
-const devs = ['389056776601075723','389056776601075723'];//zمهم نحط الايدي
+const devs = ['389056776601075723','427054141492297728'];//zمهم نحط الايدي
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' '); //حقوق GMZN Host
     if (!devs.includes(message.author.id)) return;
