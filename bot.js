@@ -12,9 +12,6 @@ const UserBlocked = new Set();
 const prefix = '1'
 
  client.on('ready', () => {
- var x = client.channels.get("531718785376321536");
- if (x) x.join();
- });
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setActivity("1play | Destroyers server", {type: 'PLAYING'});
 });
@@ -35,7 +32,10 @@ client.user.setStatus("online")
 
 //-------------------------------------------------------------نهاية السورس الاساسي--------------------------------------------------------------------------------------------------------------
  
-
+ client.on('ready', () => {
+ var x = client.channels.get("531718785376321536");
+ if (x) x.join();
+ });
 
 //--------------------------------------------------------
 
