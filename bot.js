@@ -9,11 +9,11 @@ const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const UserBlocked = new Set();
-const prefix = '1'
+const prefix = '+'
 
  client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity("1play | Destroyers server", {type: 'PLAYING'});
+  client.user.setActivity("GMZN Host", {type: 'PLAYING'});
 });
  
  
@@ -32,10 +32,6 @@ client.user.setStatus("online")
 
 //-------------------------------------------------------------نهاية السورس الاساسي--------------------------------------------------------------------------------------------------------------
  
-client.on('ready', () => {
- var x = client.channels.get("531718785376321536");
- if (x) x.join();
- });
 
 
 //--------------------------------------------------------
